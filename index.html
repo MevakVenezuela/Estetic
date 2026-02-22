@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Orion Centro Estético</title>
 
+<!-- Tipografías elegantes -->
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
@@ -12,7 +13,7 @@
 
 body{
 font-family:'Montserrat',sans-serif;
-background:#f9f9f9;
+background:#f7f1e3; /* tono beige claro */
 color:#333;
 line-height:1.8;
 }
@@ -44,7 +45,10 @@ letter-spacing:1px;
 
 .hero{
 height:95vh;
-background:url('fondo-clinica.jpeg') center/cover no-repeat;
+background-image:url('fondo-clinica.jpeg');
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
 display:flex;
 align-items:center;
 justify-content:center;
@@ -77,7 +81,6 @@ letter-spacing:2px;
 }
 
 /* Servicios */
-
 .servicios-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
@@ -104,7 +107,6 @@ font-size:26px;
 }
 
 /* Nosotros */
-
 .nosotros p{
 margin-bottom:22px;
 font-size:16px;
@@ -118,7 +120,6 @@ font-size:26px;
 }
 
 /* Reserva */
-
 .booking form{
 display:grid;
 gap:20px;
@@ -135,7 +136,7 @@ font-family:'Montserrat';
 
 .booking button{
 padding:16px;
-background:black;
+background:#8b5e3c; /* tono beige oscuro para boton */
 color:white;
 border:none;
 border-radius:8px;
@@ -146,11 +147,10 @@ letter-spacing:1px;
 }
 
 .booking button:hover{
-background:#333;
+background:#5a3e28;
 }
 
 /* Modal */
-
 .modal{
 display:none;
 position:fixed;
@@ -180,7 +180,7 @@ to{opacity:1;transform:scale(1);}
 .modal button{
 margin-top:25px;
 padding:10px 25px;
-background:black;
+background:#8b5e3c;
 color:white;
 border:none;
 border-radius:6px;
@@ -188,7 +188,6 @@ cursor:pointer;
 }
 
 /* WhatsApp */
-
 .whatsapp{
 position:fixed;
 bottom:20px;
@@ -203,9 +202,8 @@ box-shadow:0 5px 15px rgba(0,0,0,0.2);
 }
 
 /* Footer */
-
 footer{
-background:black;
+background:#5a3e28;
 color:white;
 text-align:center;
 padding:30px;
@@ -214,6 +212,10 @@ font-size:14px;
 letter-spacing:1px;
 }
 
+footer p{
+margin:4px 0;
+opacity:0.8;
+}
 </style>
 </head>
 <body>
@@ -279,7 +281,12 @@ letter-spacing:1px;
 <h2>Reservar Cita</h2>
 
 <form id="formCita" action="https://formsubmit.co/Orion.estetic25@gmail.com" method="POST">
+
+<!-- Campos ocultos para FormSubmit -->
 <input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="Nueva reserva desde Orion">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_autoresponse" value="Hemos recibido tu solicitud. En breve te contactaremos para confirmar tu cita. Orion Centro Estético.">
 
 <input type="text" name="Nombre" placeholder="Nombre completo" required>
 <input type="tel" name="Telefono" placeholder="Número de teléfono" required>
@@ -307,6 +314,7 @@ letter-spacing:1px;
 </div>
 </div>
 
+<!-- WhatsApp flotante -->
 <a class="whatsapp"
 href="https://wa.me/584144903750?text=Me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa%20personalizada%20y%20agendar%20una%20cita"
 target="_blank">
@@ -314,13 +322,12 @@ WhatsApp
 </a>
 
 <footer>
-  <p>© 2026 Centro Estético Orion - Todos los derechos reservados</p>
-  <p style="font-size: 14px; opacity: 0.7;">
-    Diseñado por Ing. Juan Luis Arteaga
-  </p>
+<p>© 2026 Orion Centro Estético · Todos los derechos reservados</p>
+<p>Diseñado por Ing. Juan Luis Arteaga</p>
 </footer>
 
 <script>
+// Bloqueo de fechas pasadas y domingos
 let fechaInput = document.getElementById("fecha");
 let hoy = new Date().toISOString().split("T")[0];
 fechaInput.setAttribute("min", hoy);
@@ -333,6 +340,7 @@ this.value="";
 }
 });
 
+// Modal de confirmación
 let form = document.getElementById("formCita");
 form.addEventListener("submit", function(){
 setTimeout(()=>{
