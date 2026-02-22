@@ -6,82 +6,172 @@
 <title>Orion Centro Estético</title>
 
 <style>
-
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 font-family: 'Segoe UI', sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-background: url("fondo-clinica.jpeg") no-repeat center center/cover;
-height:100vh;
-}
-
-.overlay{
-background: rgba(0,0,0,0.55);
-height:100vh;
-display:flex;
-flex-direction:column;
+background:#f4f4f4;
+color:#333;
 }
 
 /* HEADER */
 header{
+position:fixed;
+width:100%;
+background:white;
 display:flex;
-justify-content:center;
-padding:25px;
+justify-content:space-between;
+align-items:center;
+padding:15px 30px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+z-index:1000;
 }
 
 header img{
-height:90px;
-animation: fadeIn 1.5s ease-in-out;
+height:60px;
+}
+
+nav a{
+margin-left:20px;
+text-decoration:none;
+color:#333;
+font-weight:500;
+}
+
+nav a:hover{
+color:#c8a96a;
 }
 
 /* HERO */
 .hero{
-flex:1;
+height:100vh;
+background:url("fondo-clinica.jpeg") no-repeat center center/cover;
 display:flex;
-flex-direction:column;
 align-items:center;
 justify-content:center;
-color:white;
 text-align:center;
-padding:20px;
+position:relative;
+color:white;
+}
+
+.hero::before{
+content:"";
+position:absolute;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+}
+
+.hero-content{
+position:relative;
+z-index:2;
 }
 
 .hero h1{
-font-size:34px;
-margin-bottom:15px;
-animation: slideUp 1.2s ease;
+font-size:40px;
+margin-bottom:20px;
+animation:fadeIn 1.5s ease;
 }
 
 .hero p{
 font-size:18px;
-margin-bottom:35px;
-max-width:500px;
-animation: slideUp 1.8s ease;
+margin-bottom:30px;
+animation:fadeIn 2s ease;
 }
 
 .btn{
 padding:15px 35px;
-background: #c8a96a;
+background:#c8a96a;
 color:white;
 border:none;
 border-radius:30px;
-font-size:16px;
-cursor:pointer;
-transition:0.3s;
 text-decoration:none;
-display:inline-block;
+transition:0.3s;
 }
 
 .btn:hover{
 background:#b8944f;
-transform:scale(1.05);
 }
 
-/* BOTÓN WHATSAPP FLOTANTE */
+/* SECCIONES */
+section{
+padding:80px 20px;
+text-align:center;
+}
+
+.services{
+background:white;
+}
+
+.services h2{
+margin-bottom:40px;
+}
+
+.service-box{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:20px;
+}
+
+.card{
+background:#f9f9f9;
+padding:30px;
+width:250px;
+border-radius:15px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+/* RESERVAS */
+.booking{
+background:#f4f4f4;
+}
+
+form{
+max-width:400px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+input, select{
+padding:12px;
+border-radius:8px;
+border:1px solid #ccc;
+}
+
+button{
+padding:12px;
+background:#c8a96a;
+color:white;
+border:none;
+border-radius:8px;
+cursor:pointer;
+}
+
+button:hover{
+background:#b8944f;
+}
+
+/* FOOTER */
+footer{
+background:#222;
+color:white;
+padding:20px;
+}
+
+/* WHATSAPP */
 .whatsapp{
 position:fixed;
 bottom:25px;
@@ -90,25 +180,13 @@ background:#25D366;
 color:white;
 padding:15px 20px;
 border-radius:50px;
-font-size:14px;
 text-decoration:none;
-box-shadow:0 4px 12px rgba(0,0,0,0.3);
-transition:0.3s;
 }
 
-.whatsapp:hover{
-transform:scale(1.08);
-}
-
-/* ANIMACIONES */
+/* ANIMACIÓN */
 @keyframes fadeIn{
 from{opacity:0;}
 to{opacity:1;}
-}
-
-@keyframes slideUp{
-from{opacity:0; transform:translateY(30px);}
-to{opacity:1; transform:translateY(0);}
 }
 
 </style>
@@ -116,27 +194,61 @@ to{opacity:1; transform:translateY(0);}
 
 <body>
 
-<div class="overlay">
-
 <header>
-<img src="logo-orion.png" alt="Logo Orion">
+<img src="logo-orion.png">
+<nav>
+<a href="#inicio">Inicio</a>
+<a href="#servicios">Servicios</a>
+<a href="#reservas">Reservar</a>
+</nav>
 </header>
 
-<section class="hero">
+<section class="hero" id="inicio">
+<div class="hero-content">
 <h1>Orion Centro Estético</h1>
-<p>Innovación, precisión y elegancia en cada tratamiento. 
-Atención personalizada por profesionales certificados.</p>
-
-<a href="https://wa.me/584144903750?text=Quisiera%20tener%20asesoría%20estética" 
-class="btn" target="_blank">
-Solicitar Asesoría
-</a>
-
+<p>Elegancia, precisión y resultados naturales.</p>
+<a href="#reservas" class="btn">Reservar Cita</a>
+</div>
 </section>
 
+<section class="services" id="servicios">
+<h2>Nuestros Servicios</h2>
+<div class="service-box">
+<div class="card">
+<h3>Armonización Facial</h3>
+<p>Resultados naturales y personalizados.</p>
 </div>
+<div class="card">
+<h3>Tratamientos Anti-Edad</h3>
+<p>Rejuvenecimiento avanzado.</p>
+</div>
+<div class="card">
+<h3>Limpieza Facial Profunda</h3>
+<p>Salud y frescura para tu piel.</p>
+</div>
+</div>
+</section>
 
-<!-- Botón flotante WhatsApp -->
+<section class="booking" id="reservas">
+<h2>Reservar Cita</h2>
+<form>
+<input type="text" placeholder="Nombre Completo" required>
+<input type="tel" placeholder="Teléfono" required>
+<input type="date" required>
+<select required>
+<option value="">Seleccione Servicio</option>
+<option>Armonización Facial</option>
+<option>Tratamiento Anti-Edad</option>
+<option>Limpieza Facial</option>
+</select>
+<button type="submit">Agendar</button>
+</form>
+</section>
+
+<footer>
+<p>© 2026 Orion Centro Estético - Todos los derechos reservados</p>
+</footer>
+
 <a href="https://wa.me/584144903750?text=Quisiera%20tener%20asesoría%20estética" 
 class="whatsapp" target="_blank">
 WhatsApp
