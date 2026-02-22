@@ -3,81 +3,193 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Orion Estético</title>
+<title>Orion Centro Estético</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-}
+*{margin:0;padding:0;box-sizing:border-box;}
 
 body{
-font-family:'Montserrat',sans-serif;
-background:#C6A688;
-color:#333;
-line-height:1.6;
-}
-
-.container{
-width:90%;
-max-width:1000px;
-margin:auto;
-padding:40px 0;
+  font-family:'Montserrat',sans-serif;
+  background:#fcfcfc;
+  color:#333;
+  line-height:1.8;
 }
 
 header{
-text-align:center;
-padding:60px 20px;
-color:white;
+  background:white;
+  padding:18px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:fixed;
+  width:100%;
+  top:0;
+  z-index:1000;
+  box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
-header h1{
-font-size:2.5rem;
-font-weight:600;
+header img{ height:60px; }
+
+nav a{
+  margin-left:15px;
+  text-decoration:none;
+  color:#333;
+  font-weight:400;
+  letter-spacing:1px;
+  font-size:14px;
 }
 
-.card{
-background:white;
-padding:30px;
-border-radius:10px;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
-margin-bottom:30px;
+.hero{
+  height:85vh;
+  background-image:url('fondo-clinica.jpeg');
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  color:white;
+  margin-top:80px;
+}
+
+.hero h2{
+  font-family:'Cormorant Garamond',serif;
+  font-size:45px;
+  background:rgba(0,0,0,0.45);
+  padding:20px 40px;
+  border-radius:6px;
+  letter-spacing:2px;
+}
+
+section{
+  padding:80px 15px;
+  max-width:1100px;
+  margin:auto;
 }
 
 h2{
-margin-bottom:20px;
-font-weight:600;
+  font-family:'Cormorant Garamond',serif;
+  text-align:center;
+  margin-bottom:40px;
+  font-size:38px;
+  letter-spacing:2px;
 }
 
-input, button{
-width:100%;
-padding:12px;
-margin-bottom:15px;
-border-radius:6px;
-border:1px solid #ccc;
-font-size:1rem;
+/* Servicios */
+.servicios-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
 }
 
-button{
-background:#a8835d;
-color:white;
-border:none;
-cursor:pointer;
-transition:0.3s;
+.card{
+  background:white;
+  padding:30px;
+  border-radius:12px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
+  text-align:center;
+  transition:0.3s;
 }
 
-button:hover{
-background:#8f6f4f;
+.card:hover{ transform:translateY(-5px); }
+
+.card h3{
+  font-family:'Cormorant Garamond',serif;
+  margin-bottom:12px;
+  font-size:24px;
 }
 
+/* Nosotros */
+.nosotros p{
+  margin-bottom:20px;
+  font-size:15px;
+}
+
+.nosotros h3{
+  font-family:'Cormorant Garamond',serif;
+  margin-top:25px;
+  margin-bottom:12px;
+  font-size:24px;
+}
+
+/* Reserva */
+.booking form{
+  display:grid;
+  gap:18px;
+  max-width:600px;
+  margin:auto;
+}
+
+.booking input,.booking select{
+  padding:14px;
+  border:1px solid #ddd;
+  border-radius:8px;
+  font-family:'Montserrat';
+}
+
+.booking button{
+  padding:15px;
+  background:#fef5e6;
+  color:#5a3e28;
+  border:none;
+  border-radius:8px;
+  font-size:15px;
+  cursor:pointer;
+  transition:.3s;
+  letter-spacing:1px;
+}
+
+.booking button:hover{ background:#f5e0c9; }
+
+/* WhatsApp */
+.whatsapp{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25D366;
+  color:white;
+  padding:14px 20px;
+  border-radius:50px;
+  text-decoration:none;
+  font-weight:500;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  font-size:14px;
+}
+
+/* Footer */
 footer{
-text-align:center;
-padding:30px;
-font-size:12px;
-opacity:0.3;
+  background:#fefcf8;
+  color:#5a3e28;
+  text-align:center;
+  padding:30px;
+  margin-top:60px;
+  font-size:14px;
+  letter-spacing:1px;
+}
+
+footer p{ margin:4px 0; opacity:0.8; }
+
+footer .discreet{
+  font-size:8px;
+  opacity:0.3;
+  margin-top:5px;
+}
+
+/* Responsive */
+@media (max-width:768px){
+  .hero h2{ font-size:32px; padding:15px 25px; }
+  nav a{ font-size:12px; margin-left:12px; }
+  h2{ font-size:32px; }
+}
+
+@media (max-width:480px){
+  .hero h2{ font-size:28px; padding:12px 20px; }
+  h2{ font-size:28px; }
+  .card h3{ font-size:22px; }
+  .booking button{ font-size:14px; padding:12px; }
 }
 </style>
 </head>
@@ -85,37 +197,110 @@ opacity:0.3;
 <body>
 
 <header>
-<h1>Orion Estético</h1>
-<p>Reserva tu cita de manera rápida y sencilla</p>
+<img src="logo-orion.png" alt="Orion Logo">
+<nav>
+<a href="#">Inicio</a>
+<a href="#servicios">Servicios</a>
+<a href="#nosotros">Nosotros</a>
+<a href="#cita">Reservar Cita</a>
+</nav>
 </header>
 
-<div class="container">
+<section class="hero">
+<h2>Armonizamos tu belleza natural</h2>
+</section>
 
+<section id="servicios">
+<h2>Servicios</h2>
+<div class="servicios-grid">
 <div class="card">
-<h2>Reservar cita</h2>
+<h3>Armonización Facial</h3>
+<p>Equilibrio y definición natural de tus rasgos.</p>
+</div>
+<div class="card">
+<h3>Botox</h3>
+<p>Prevención y tratamiento de líneas de expresión.</p>
+</div>
+<div class="card">
+<h3>Ácido Hialurónico</h3>
+<p>Volumen y rejuvenecimiento sutil y elegante.</p>
+</div>
+<div class="card">
+<h3>Tratamientos Anti-Edad</h3>
+<p>Protocolos personalizados basados en evidencia.</p>
+</div>
+</div>
+</section>
+
+<section id="nosotros" class="nosotros">
+<h2>Sobre Nosotros</h2>
+
+<p>En Orion, entendemos que la medicina estética no se trata simplemente de transformar el exterior, sino de armonizar la imagen que proyectas con la seguridad que sientes en tu interior.</p>
+
+<h3>Nuestra Dirección Médica</h3>
+<p>Bajo la visión y el liderazgo de la Dra. Irina Matute, Orion se ha consolidado como un espacio donde la ética profesional es el pilar fundamental.</p>
+
+<h3>Nuestra Filosofía</h3>
+<p>No creemos en cambios drásticos que alteren tu identidad, sino en realzar tu esencia natural.</p>
+
+<h3>¿Por qué elegirnos?</h3>
+<p><strong>Tratamientos Personalizados:</strong> Diseñamos protocolos exclusivos para ti.</p>
+<p><strong>Seguridad Médica:</strong> Tu salud es nuestra prioridad número uno.</p>
+<p><strong>Innovación Constante:</strong> Siempre a la vanguardia en medicina estética.</p>
+
+<p><strong>En Orion, no solo cuidamos tu piel; iluminamos tu confianza.</strong></p>
+</section>
+
+<section class="booking" id="cita">
+<h2>Reservar Cita</h2>
 
 <form action="https://formsubmit.co/Orion.estetic25@gmail.com" method="POST">
 
-<input type="hidden" name="_captcha" value="false">
-
 <input type="hidden" name="_next" value="https://mevakvenezuela.github.io/Estetic/gracias.html">
+<input type="hidden" name="_captcha" value="false">
+<input type="hidden" name="_subject" value="Nueva reserva desde Orion">
+<input type="hidden" name="_template" value="table">
 
 <input type="text" name="Nombre" placeholder="Nombre completo" required>
-<input type="tel" name="Telefono" placeholder="Teléfono" required>
-<input type="date" name="Fecha" required>
+<input type="tel" name="Telefono" placeholder="Número de teléfono" required>
+
+<select name="Servicio" required>
+<option value="">Selecciona un servicio</option>
+<option>Armonización Facial</option>
+<option>Botox</option>
+<option>Ácido Hialurónico</option>
+<option>Tratamientos Anti-Edad</option>
+</select>
+
+<input type="date" id="fecha" name="Fecha" required>
 <input type="time" name="Hora" required>
 
-<button type="submit">Reservar ahora</button>
-
+<button type="submit">Confirmar Reserva</button>
 </form>
+</section>
 
-</div>
-
-</div>
+<a class="whatsapp"
+href="https://wa.me/584144903750?text=Me%20gustaría%20agendar%20una%20cita"
+target="_blank">WhatsApp</a>
 
 <footer>
-Diseñado por Ing. Juan Luis Arteaga
+<p style="font-weight:bold;">© 2026 Orion Centro Estético · Todos los derechos reservados</p>
+<p class="discreet">Diseñado por Ing. Juan Luis Arteaga</p>
 </footer>
+
+<script>
+let fechaInput = document.getElementById("fecha");
+let hoy = new Date().toISOString().split("T")[0];
+fechaInput.setAttribute("min", hoy);
+
+fechaInput.addEventListener("input", function(){
+  let fechaSeleccionada = new Date(this.value);
+  if(fechaSeleccionada.getDay() === 0){
+    alert("No laboramos los domingos.");
+    this.value="";
+  }
+});
+</script>
 
 </body>
 </html>
