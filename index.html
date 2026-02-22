@@ -13,7 +13,7 @@
 
 body{
   font-family:'Montserrat',sans-serif;
-  background:#fcfcfc; /* casi blanco para look profesional */
+  background:#fcfcfc; /* fondo casi blanco */
   color:#333;
   line-height:1.8;
 }
@@ -219,7 +219,6 @@ footer p{
   opacity:0.8;
 }
 
-/* Texto muy pequeño para tu firma */
 footer .discreet{
   font-size:8px;
   opacity:0.3;
@@ -322,6 +321,8 @@ footer .discreet{
 
 <form id="formCita" action="https://formsubmit.co/Orion.estetic25@gmail.com" method="POST">
 
+<!-- Redirigir a la misma página para evitar 404 -->
+<input type="hidden" name="_next" value="index.html">
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_subject" value="Nueva reserva desde Orion">
 <input type="hidden" name="_template" value="table">
@@ -377,12 +378,13 @@ fechaInput.addEventListener("input", function(){
   }
 });
 
+// Modal de confirmación y envío al correo
 let form = document.getElementById("formCita");
 form.addEventListener("submit", function(e){
-  e.preventDefault();
+  e.preventDefault(); // evita recargar
   setTimeout(()=>{
     document.getElementById("modalConfirmacion").style.display="flex";
-    form.submit();
+    form.submit(); // envía automáticamente al correo
   },500);
 });
 
