@@ -321,7 +321,7 @@ footer .discreet{
 
 <form id="formCita" action="https://formsubmit.co/Orion.estetic25@gmail.com" method="POST">
 
-<!-- Redirigir a la misma página para evitar 404 -->
+<!-- Redirigir a la misma página -->
 <input type="hidden" name="_next" value="index.html">
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_subject" value="Nueva reserva desde Orion">
@@ -381,10 +381,10 @@ fechaInput.addEventListener("input", function(){
 // Modal de confirmación y envío al correo
 let form = document.getElementById("formCita");
 form.addEventListener("submit", function(e){
-  e.preventDefault(); // evita recargar
+  e.preventDefault();
   setTimeout(()=>{
     document.getElementById("modalConfirmacion").style.display="flex";
-    form.submit(); // envía automáticamente al correo
+    form.submit();
   },500);
 });
 
