@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Orion Centro Estético Facial | Maracay</title>
+
+<link rel="icon" type="image/png" href="logo-orion.png">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --beige:#E8DCC3;
+  --black:#111;
+  --white:#fff;
+  --overlay:rgba(0,0,0,0.45);
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--white);
+  color:var(--black);
+  scroll-behavior:smooth;
+}
+
+/* ================= HEADER ================= */
+
+header{
+  position:fixed;
+  width:100%;
+  padding:20px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(255,255,255,0.85);
+  backdrop-filter:blur(8px);
+  z-index:1000;
+}
+
+.logo{
+  height:60px;
+  object-fit:contain;
+}
+
+nav a{
+  margin-left:25px;
+  text-decoration:none;
+  font-weight:500;
+  color:var(--black);
+  position:relative;
+}
+
+nav a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-5px;
+  width:0;
+  height:2px;
+  background:var(--beige);
+  transition:.3s;
+}
+
+nav a:hover::after{
+  width:100%;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  height:100vh;
+  background:url("fondo-clinica.jpg") center/cover no-repeat;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.hero::before{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:var(--overlay);
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  color:var(--white);
+  animation:fadeIn 2s ease;
+}
+
+.hero-logo{
+  width:320px;
+  margin-bottom:25px;
+}
+
+.hero h1{
+  font-family:'Playfair Display',serif;
+  font-size:42px;
+  letter-spacing:2px;
+}
+
+.hero p{
+  margin-top:15px;
+  font-size:18px;
+  opacity:0.9;
+}
+
+.hero button{
+  margin-top:25px;
+  padding:14px 35px;
+  border:none;
+  border-radius:30px;
+  background:var(--beige);
+  color:var(--black);
+  font-weight:500;
+  cursor:pointer;
+  transition:.4s;
+}
+
+.hero button:hover{
+  transform:translateY(-4px);
+}
+
+/* ================= SECCIONES ================= */
+
+section{
+  padding:100px 10%;
+}
+
+.section-title{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.section-title h2{
+  font-family:'Playfair Display',serif;
+  font-size:36px;
+}
+
+/* ================= SERVICIOS ================= */
+
+.services{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:30px;
+}
+
+.card{
+  background:var(--white);
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.08);
+  transition:.4s;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+}
+
+.card h3{
+  margin-bottom:10px;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  background:var(--black);
+  color:var(--white);
+  text-align:center;
+  padding:40px 0;
+}
+
+@keyframes fadeIn{
+  from{opacity:0;transform:translateY(15px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@media(max-width:768px){
+  .hero-logo{
+    width:220px;
+  }
+  .hero h1{
+    font-size:28px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <img src="logo-orion.png" class="logo" alt="Orion Centro Estético Facial">
+  <nav>
+    <a href="#inicio">Inicio</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<section class="hero" id="inicio">
+  <div class="hero-content">
+    <img src="logo-orion.png" class="hero-logo" alt="Logo Orion">
+    <h1>Alta Estética Facial</h1>
+    <p>Maracay, Aragua · Venezuela</p>
+    <button onclick="scrollToSection()">Agenda tu cita</button>
+  </div>
+</section>
+
+<section id="servicios">
+  <div class="section-title">
+    <h2>Nuestros Servicios</h2>
+  </div>
+  <div class="services">
+    <div class="card">
+      <h3>Limpieza Facial Profunda</h3>
+      <p>Tratamiento profesional de purificación y revitalización.</p>
+    </div>
+    <div class="card">
+      <h3>Peeling Médico</h3>
+      <p>Renovación celular y mejora de textura cutánea.</p>
+    </div>
+    <div class="card">
+      <h3>Hidratación Premium</h3>
+      <p>Nutrición profunda para piel luminosa y saludable.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  © 2026 Orion Centro Estético Facial · Maracay, Aragua
+</footer>
+
+<script>
+function scrollToSection(){
+  window.scrollTo({
+    top:document.getElementById("servicios").offsetTop - 80,
+    behavior:"smooth"
+  });
+}
+</script>
+
+</body>
+</html>
