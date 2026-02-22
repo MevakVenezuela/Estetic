@@ -20,7 +20,7 @@ body{
 
 header{
   background:white;
-  padding:18px 40px;
+  padding:18px 20px;
   display:flex;
   justify-content:space-between;
   align-items:center;
@@ -36,15 +36,16 @@ header img{
 }
 
 nav a{
-  margin-left:25px;
+  margin-left:15px;
   text-decoration:none;
   color:#333;
   font-weight:400;
   letter-spacing:1px;
+  font-size:14px;
 }
 
 .hero{
-  height:95vh;
+  height:85vh;
   background-image:url('fondo-clinica.jpeg');
   background-size:cover;
   background-position:center;
@@ -54,20 +55,20 @@ nav a{
   justify-content:center;
   text-align:center;
   color:white;
-  margin-top:90px;
+  margin-top:80px;
 }
 
 .hero h2{
   font-family:'Cormorant Garamond',serif;
-  font-size:55px;
+  font-size:45px;
   background:rgba(0,0,0,0.45);
-  padding:25px 60px;
+  padding:20px 40px;
   border-radius:6px;
   letter-spacing:2px;
 }
 
 section{
-  padding:90px 20px;
+  padding:80px 15px;
   max-width:1100px;
   margin:auto;
 }
@@ -75,8 +76,8 @@ section{
 h2{
   font-family:'Cormorant Garamond',serif;
   text-align:center;
-  margin-bottom:50px;
-  font-size:42px;
+  margin-bottom:40px;
+  font-size:38px;
   letter-spacing:2px;
 }
 
@@ -84,14 +85,14 @@ h2{
 .servicios-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:30px;
+  gap:25px;
 }
 
 .card{
   background:white;
-  padding:35px;
+  padding:30px;
   border-radius:12px;
-  box-shadow:0 5px 20px rgba(0,0,0,0.05);
+  box-shadow:0 5px 15px rgba(0,0,0,0.05);
   text-align:center;
   transition:0.3s;
 }
@@ -102,45 +103,45 @@ h2{
 
 .card h3{
   font-family:'Cormorant Garamond',serif;
-  margin-bottom:15px;
-  font-size:26px;
+  margin-bottom:12px;
+  font-size:24px;
 }
 
 /* Nosotros */
 .nosotros p{
-  margin-bottom:22px;
-  font-size:16px;
+  margin-bottom:20px;
+  font-size:15px;
 }
 
 .nosotros h3{
   font-family:'Cormorant Garamond',serif;
-  margin-top:30px;
-  margin-bottom:15px;
-  font-size:26px;
+  margin-top:25px;
+  margin-bottom:12px;
+  font-size:24px;
 }
 
 /* Reserva */
 .booking form{
   display:grid;
-  gap:20px;
+  gap:18px;
   max-width:600px;
   margin:auto;
 }
 
 .booking input,.booking select{
-  padding:15px;
+  padding:14px;
   border:1px solid #ddd;
   border-radius:8px;
   font-family:'Montserrat';
 }
 
 .booking button{
-  padding:16px;
-  background:#fef5e6; /* beige muy suave para botón */
+  padding:15px;
+  background:#fef5e6; /* beige muy suave */
   color:#5a3e28;
   border:none;
   border-radius:8px;
-  font-size:16px;
+  font-size:15px;
   cursor:pointer;
   transition:.3s;
   letter-spacing:1px;
@@ -165,7 +166,7 @@ h2{
 
 .modal-content{
   background:white;
-  padding:50px;
+  padding:40px;
   border-radius:12px;
   text-align:center;
   max-width:450px;
@@ -178,8 +179,8 @@ h2{
 }
 
 .modal button{
-  margin-top:25px;
-  padding:10px 25px;
+  margin-top:20px;
+  padding:10px 20px;
   background:#fef5e6;
   color:#5a3e28;
   border:none;
@@ -194,20 +195,21 @@ h2{
   right:20px;
   background:#25D366;
   color:white;
-  padding:15px 20px;
+  padding:14px 20px;
   border-radius:50px;
   text-decoration:none;
   font-weight:500;
   box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  font-size:14px;
 }
 
 /* Footer */
 footer{
-  background:#5a3e28;
-  color:white;
+  background:#fefcf8; /* más claro */
+  color:#5a3e28;
   text-align:center;
   padding:30px;
-  margin-top:80px;
+  margin-top:60px;
   font-size:14px;
   letter-spacing:1px;
 }
@@ -215,6 +217,44 @@ footer{
 footer p{
   margin:4px 0;
   opacity:0.8;
+}
+
+/* Texto muy pequeño para tu firma */
+footer .discreet{
+  font-size:8px;
+  opacity:0.3;
+  margin-top:5px;
+}
+
+/* Responsivo */
+@media (max-width:768px){
+  .hero h2{
+    font-size:32px;
+    padding:15px 25px;
+  }
+  nav a{
+    font-size:12px;
+    margin-left:12px;
+  }
+  h2{
+    font-size:32px;
+  }
+}
+@media (max-width:480px){
+  .hero h2{
+    font-size:28px;
+    padding:12px 20px;
+  }
+  h2{
+    font-size:28px;
+  }
+  .card h3{
+    font-size:22px;
+  }
+  .booking button{
+    font-size:14px;
+    padding:12px;
+  }
 }
 </style>
 </head>
@@ -282,7 +322,6 @@ footer p{
 
 <form id="formCita" action="https://formsubmit.co/Orion.estetic25@gmail.com" method="POST">
 
-<!-- Campos ocultos para FormSubmit -->
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_subject" value="Nueva reserva desde Orion">
 <input type="hidden" name="_template" value="table">
@@ -314,7 +353,6 @@ footer p{
 </div>
 </div>
 
-<!-- WhatsApp flotante -->
 <a class="whatsapp"
 href="https://wa.me/584144903750?text=Me%20gustar%C3%ADa%20recibir%20asesor%C3%ADa%20personalizada%20y%20agendar%20una%20cita"
 target="_blank">
@@ -322,12 +360,11 @@ WhatsApp
 </a>
 
 <footer>
-<p>© 2026 Orion Centro Estético · Todos los derechos reservados</p>
-<p>Diseñado por Ing. Juan Luis Arteaga</p>
+<p style="font-weight:bold;">© 2026 Orion Centro Estético · Todos los derechos reservados</p>
+<p class="discreet">Diseñado por Ing. Juan Luis Arteaga</p>
 </footer>
 
 <script>
-// Bloqueo de fechas pasadas y domingos
 let fechaInput = document.getElementById("fecha");
 let hoy = new Date().toISOString().split("T")[0];
 fechaInput.setAttribute("min", hoy);
@@ -340,13 +377,12 @@ fechaInput.addEventListener("input", function(){
   }
 });
 
-// Modal de confirmación y envío al correo
 let form = document.getElementById("formCita");
 form.addEventListener("submit", function(e){
-  e.preventDefault(); // evita recargar
+  e.preventDefault();
   setTimeout(()=>{
     document.getElementById("modalConfirmacion").style.display="flex";
-    form.submit(); // envía automáticamente al correo
+    form.submit();
   },500);
 });
 
